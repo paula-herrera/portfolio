@@ -1,0 +1,152 @@
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 65px;
+  font-weight: 400;
+  margin-bottom: 70px;
+}
+
+p {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #FFFBF8;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a:visited {
+  color: #FFFBF8;
+}
+
+.row-2, .row-3, .row-4 {
+  padding: 100px 200px 100px 200px;
+}
+
+.row-1, .row-3 {
+  background-color: #FFFBF8;
+  color: #121212;
+}
+
+.row-2, .row-4, footer {
+  background-color: #121212;
+  color: #FFFBF8;
+}
+
+.row-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.info {
+  padding: 0 50px 0 200px;
+  margin-bottom: 100px;
+  width: 50%;
+}
+
+.row-1 h1 {
+  padding-top: 200px;
+}
+
+.bio p {
+  font-family: serif;
+  font-size: 30px;
+}
+
+.headshot {
+  width: 50%;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+}
+.headshot img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-previews img {
+  width: 850px;
+  margin-right: 100px;
+}
+
+.project {
+  padding-bottom: 50px;
+}
+
+.project-number {
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+
+.project-name {
+  font-family: sans-serif;
+  font-size: 45px;
+}
+
+.projects .social-link {
+  font-size: 35px;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 25px;
+  font-family: sans-serif;
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 30%;
+  padding-bottom: 100px;
+  margin-right: 200px;
+}
+
+.skills-section img {
+  padding: 5px 20px 0 0;
+}
+
+.skills-section p {
+  margin: 0;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.social-link a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.social-link img {
+  padding-right: 15px;
+}
+
+.footer p {
+  padding-top: 60px;
+}
