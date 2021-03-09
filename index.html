@@ -3,7 +3,8 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo&family=Lora&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -11,12 +12,16 @@
     <section class="row-1">
       <div class="info">
         <div class="title">
-          <h1>Hello, I'm Paula Herrera.</h1>
+          <h1>Hello, <span id="paula">I'm Paula Herrera.</span></h1>
         </div>
         <div class="bio">
-          <p>I'm a full-stack web developer with a passion for making things. I'm an ex-corporate meeting plannner who switched careers and to bring my detail-oriented approach to web development</p>
-          <p>In my spare time, I love to get outside and hike with my husband or hand out with my cats. I love books, building miniatures, sewing clothes, and playing Animal Crossing</p>
-          <p>she / her / hers</p>
+          <p>I'm a full-stack web developer with a passion for making things. I'm an ex-corporate meeting plannner who switched careers in order to bring my detail-oriented approach to web development.</p>
+          <p>In my spare time, I love to get outside and hike with my husband or hang out with my cats, Frankie and Eddie. I can often be found reading, watching movies, building miniatures, cooking up a storm, or learning how to sew.</p>
+          <div class="initials">
+            <span class="p">P</span>
+            <span class="h">H</span>
+          </div>
+          <p id="pronouns">she / her / hers</p>
         </div>
       </div>
       <div class="headshot">
@@ -29,37 +34,45 @@
       </div>
       <div class="projects">
         <div class="project-previews">
-          <img src="images/Bibliostats.png" alt="Bibliostats Preview">
         </div>
         <div class="project-titles">
           <div class="project">
             <div class="project-number">
               01
             </div>
-            <div class="project-name project-one">
-              Bibliostats
+            <div class="project-name project-one" data-num="previewOne">
+              <a href="https://bibliostats.herokuapp.com/">Bibliostats</a>
+            </div>
+            <div class="mobile-preview">
+              <img src="images/Bibliostats.png" alt="Bibliostats Preview">
             </div>
           </div>
           <div class="project">
             <div class="project-number">
               02
             </div>
-            <div class="project-name project-two">
-              Project 2
+            <div class="project-name project-two" data-num="previewTwo">
+              <a href="https://dogesweeper.herokuapp.com/">Dogesweeper</a>
+            </div>
+            <div class="mobile-preview">
+              <img src="images/Dogesweeper.png" alt="DogeSweeper Preview">
             </div>
           </div>
-          <div class="project">
+          <!-- <div class="project">
             <div class="project-number">
               03
             </div>
-            <div class="project-name project-three">
+            <div class="project-name project-three" data-num="previewThree">
               Project 3
             </div>
-          </div>
-          <div class="social-link">
+            <div class="mobile-preview">
+              <img src="images/Dogesweeper.png" alt="DogeSweeper Preview">
+            </div>
+          </div> -->
+          <div class="social-link github-link">
             <a href="https://github.com/paula-herrera">
               <img src="images/github.png" alt="Github logo">
-              View all my projects
+              <p>View all my projects</p>
             </a>
           </div>
         </div>
@@ -86,11 +99,11 @@
         </div>
         <div class="skills-section">
           <img src="images/diamond.png">
-          <p>Docker &#183; AWS (S3, EC2) &#183; Webpack &#183; Git &#183; Jest &#183; Enzyme &#183; Mocha/Chai &#183; Postman &#183; Visual Studio Code</p>
+          <p>Agile Project Management &#183; Pair Programming</p>
         </div>
       </div>
     </section>
-    <section class="row-4">
+    <footer class="row-4">
       <div class="title">
         <h1>Say hello</h1>
       </div>
@@ -114,11 +127,56 @@
           </a>
         </div>
       </div>
-      <div class="footer">
-        <p>&copy; 2021 Paula Herrera</p>
+      <div class="copyright">
+        <div class="initials">
+          <span class="p">P</span>
+          <span class="h">H</span>
+        </div>
+        <div>
+          <p>&copy; 2021 Paula Herrera</p>
+        </div>
       </div>
-    </section>
+    </footer>
   </main>
+
+  <style>
+    :root {
+      --img: url("images/Bibliostats.png");
+    }
+
+    .project-previews {
+      width: 850px;
+      height: 500px;
+      margin-right: 100px;
+      background-image: var(--img);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+  </style>
+
+  <script>
+    const projects = document.querySelectorAll('.project-name');
+
+    const previewOne = 'url("images/Bibliostats.png")';
+    const previewTwo = 'url("images/Dogesweeper.png")';
+    const previewThree = 'url("images/Bibliostats.png")';
+
+    function changeImage() {
+      console.log(this.dataset.num)
+      let preview = '';
+      if (this.dataset.num === 'previewOne') {
+        preview = previewOne;
+      } else if (this.dataset.num === 'previewTwo') {
+        preview = previewTwo;
+      } else {
+        preview = previewThree;
+      }
+      document.documentElement.style.setProperty('--img', preview, 'important')
+    }
+
+    projects.forEach(project => project.addEventListener('mouseover', changeImage));
+  </script>
 </body>
 
 </html>
